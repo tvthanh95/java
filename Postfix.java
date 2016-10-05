@@ -1,6 +1,15 @@
+/*
+@author: Truong Van Thanh;
+This class convert an infix expression to a postfix expression.
+*/
 import java.util.*;
 class Postfix
 {
+  /*
+  @param1: first operator;
+  @param2: second operator;
+  @return: true if first operator has higher priority than second operator;
+  */
   public static boolean precedent(String st1, String st2)
   {
     String p1 = new String("^");
@@ -13,6 +22,10 @@ class Postfix
     }
     return false;
   }
+  /*
+  @param: a string to check if it is an operator;
+  @return: true if st is an operator, false if not.
+  */
   public static boolean isOperator(String st)
   {
       String operator = "+-*/()^";
@@ -20,6 +33,10 @@ class Postfix
         return true;
       return false;
   }
+  /*
+  @param: an infix expression;
+  @return: an postfix expression as an ArrayList;
+  */
   public static ArrayList<String> toPostfix(String exp)
   {
     ArrayList<String> post = new ArrayList<String>();
@@ -61,6 +78,9 @@ class Postfix
     }
     return post;
   }
+  /*
+  Test 
+  */
   public static void main(String[] args)
   {
     String exp = new String("( 12 * 3 ) + 5 / ( 6 + 3 )");
