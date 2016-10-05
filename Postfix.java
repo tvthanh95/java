@@ -79,12 +79,14 @@ class Postfix
     return post;
   }
   /*
-  Test 
+  Test
   */
   public static void main(String[] args)
   {
-    String exp = new String("( 12 * 3 ) + 5 / ( 6 + 3 )");
-    ArrayList<String> ar = toPostfix(exp);
-    System.out.println(ar.toString());
+    if(args.length >= 1)
+    {
+      ArrayList<String> ar = toPostfix(args[0]);
+      System.out.println(ar.toString());
+    }
   }
 }
