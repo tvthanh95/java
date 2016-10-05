@@ -15,8 +15,8 @@ class Postfix
     String p1 = new String("^");
     String p2 = new String("*/");
     String p3 = new String("+-");
-    if(((p1.indexOf(st1) != -1) && ((p2.indexOf(st2) != -1) || p3.indexOf(st2) != -1))
-      || ((p2.indexOf(st1) != -1) && (p3.indexOf(st2) != -1)))
+    if(((p1.indexOf(st1) != -1) && ((p2.indexOf(st2) != -1) || p3.indexOf(st2) != -1) || p1.indexOf(st2) != -1)
+      || ((p2.indexOf(st1) != -1) && ((p3.indexOf(st2) != -1) || (p2.indexOf(st2) != -1))))
     {
       return true;
     }
@@ -83,10 +83,8 @@ class Postfix
   */
   public static void main(String[] args)
   {
-    if(args.length >= 1)
-    {
-      ArrayList<String> ar = toPostfix(args[0]);
+      String exp = new String("( 4 + 8 ) * ( 6 - 5 ) / ( ( 3 - 2 ) * ( 2 + 2 ) )");
+      ArrayList<String> ar = toPostfix(exp);
       System.out.println(ar.toString());
-    }
   }
 }
